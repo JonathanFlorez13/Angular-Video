@@ -16,13 +16,16 @@ export class AppComponent {
     'T1==cGFydG5lcl9pZD00Njc5NzU2NCZzaWc9NGYzYmRmOGI5MDI5ZjNiYzFiZDEwZjhjZmVlN2JjYmM2ODgyMGIzNjpzZXNzaW9uX2lkPTJfTVg0ME5qYzVOelUyTkg1LU1UWTFOVEl4TmpRMU9EUTNNWDQwV0VZdlkycExlRTlxTlhVMFdEWnZaM1JuWkRka2JVUi1mZyZjcmVhdGVfdGltZT0xNjU1MjE2NDU5Jm5vbmNlPTAuMzkyNTIyMzE0OTExNDM3NjMmcm9sZT1wdWJsaXNoZXImZXhwaXJlX3RpbWU9MTY1NTMwMjg1OSZpbml0aWFsX2xheW91dF9jbGFzc19saXN0PQ==';
 
   async loadImage(): Promise<HTMLImageElement> {
-    return new Promise((resolve) => {
-      const image = new Image();
-      //const image = document.createElement('img');
-      // image.crossOrigin = ' ';
-      image.src = 'Users/jflorez/Documents/Angular/prueba/src/app/backgrounds/simpson_background.jpg';
-      image.onload = () => resolve(image);
-    });
+    const img:any = './backgrounds/simpson_background.jpg';
+    return img;
+
+    // return new Promise((resolve) => {
+    //   //const image = new Image();
+    //   const image = document.createElement('img');
+    //   //image.crossOrigin = '';
+    //   image.src = './backgrounds/simpson_background.jpg';
+    //   image.onload = () => resolve(image);
+    // });
   }
 
   async getLocalMedia(): Promise<any> {
@@ -63,6 +66,7 @@ export class AppComponent {
         else console.log('Publisher Created');
       }
     );
+
 
     await effectProcessor.loadEffect(
       new VirtualBackgroundEffect({
