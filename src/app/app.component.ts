@@ -8,20 +8,19 @@ import { BackgroundEffectProcessor } from '@vonage/video-effects/dist/effects/Ba
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'prueba';
+  background = '';
   apikey = '46797564';
   sessionId =
     '2_MX40Njc5NzU2NH5-MTY1NTIxNjQ1ODQ3MX40WEYvY2pLeE9qNXU0WDZvZ3RnZDdkbUR-fg';
   token =
     'T1==cGFydG5lcl9pZD00Njc5NzU2NCZzaWc9NGYzYmRmOGI5MDI5ZjNiYzFiZDEwZjhjZmVlN2JjYmM2ODgyMGIzNjpzZXNzaW9uX2lkPTJfTVg0ME5qYzVOelUyTkg1LU1UWTFOVEl4TmpRMU9EUTNNWDQwV0VZdlkycExlRTlxTlhVMFdEWnZaM1JuWkRka2JVUi1mZyZjcmVhdGVfdGltZT0xNjU1MjE2NDU5Jm5vbmNlPTAuMzkyNTIyMzE0OTExNDM3NjMmcm9sZT1wdWJsaXNoZXImZXhwaXJlX3RpbWU9MTY1NTMwMjg1OSZpbml0aWFsX2xheW91dF9jbGFzc19saXN0PQ==';
-  
+    
+
   async loadImage(): Promise<HTMLImageElement> {
     return new Promise((resolve) => {
-      //const image = new Image();
-      const image = document.createElement('img');
+      const image = new Image();
       image.crossOrigin = '';
-      //image.src = 'https://es.rankiapro.com/wp-content/uploads/2019/08/fondo-tecnologico-preferido-selectores.jpg';
-      image.src = '../assets/vonage_background.jpg';
+      image.src = `../assets/vonage.jpg`;
       image.onload = () => resolve(image);
     });
   }
@@ -87,7 +86,6 @@ export class AppComponent {
       },
       sessionConnected: async (event: any) => {
         session.publish(publisher);
-        //effectProcessor.pauseStreamProcessing(!event.event.newValue);
       },
     });
 
